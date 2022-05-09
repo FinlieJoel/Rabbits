@@ -6,6 +6,11 @@
 
 class thePen
 {
+
+    const int MaxAge = 9;
+    const int MaxInfectedAge = 49;
+    const int MaxPopulation = 999;
+
 public:
     bool breadingMale;
     int breadingFemale;

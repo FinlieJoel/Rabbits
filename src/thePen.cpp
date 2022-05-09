@@ -24,11 +24,8 @@ void thePen::display(int age, std::string name, std::string radioactive, std::st
 
 void thePen::turn()
 {
-
     breadingFemale = 0;
     breadingMale = false;
-
-    int bunnyNo = 1;
 
     for (std::list<std::shared_ptr<bunny>>::iterator f = MyBunnyList.begin(); f != MyBunnyList.end(); ++f)
     {
@@ -57,7 +54,7 @@ void thePen::turn()
                 breadingMale = true;
             }
         }
-        if (((*f)->age == 9 && (*f)->i_radioactive == 0) || ((*f)->age == 49))
+        if (((*f)->age == MaxAge && (*f)->i_radioactive == 0) || ((*f)->age == MaxInfectedAge))
         {
             std::cout << "Bunny " << (*f)->name << " has died\n";
             MyBunnyList.erase(f--);
@@ -71,7 +68,6 @@ void thePen::turn()
         {
             std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>();
             MyBunnyList.push_back(NewBunny);
-            // int a = furColour.at(i);
             NewBunny->SetColour(furColour.at(i));
             std::cout << "Bunny " << NewBunny->name << " was born!"
                       << "FUR COLOUR: " << NewBunny->m_colour << std::endl;
@@ -85,7 +81,7 @@ void thePen::turn()
 
     std::cout << "AMOUNT OF BUNNIES:  " << MyBunnyList.size() << std::endl;
 
-    if (MyBunnyList.size() > 999)
+    if (MyBunnyList.size() > MaxPopulation)
     {
 
         std::cout << "before the buuny cull size :: " << MyBunnyList.size() << std::endl;
