@@ -12,14 +12,7 @@ public:
     };
     enum e_sex i_sex;
 
-    enum e_radioactive
-    {
-        normal,
-        radioactive
-    };
-    enum e_radioactive i_radioactive;
-
-    // bool radioactive;
+    bool radioactive;
 
     enum e_colour
     {
@@ -34,7 +27,6 @@ public:
 
     bunny();
     bunny(int);
-    void SetColour(int);
     void SetAge();
     void turnRadioactive();
     std::string getRadioactive();

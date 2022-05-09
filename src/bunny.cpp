@@ -11,8 +11,6 @@
 bunny::bunny()
 {
     age = 0;
-    // change radioactve to true/ false
-
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist2(0, 1);
@@ -26,18 +24,15 @@ bunny::bunny()
         i_sex = e_sex::female;
     }
 
-    // change to bool
     std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
     randomNumber = dist100(rng);
     if (randomNumber > 1)
     {
-        i_radioactive = e_radioactive::normal;
-        // radioactive = false;
+        radioactive = false;
     }
     else
     {
-        i_radioactive = e_radioactive::radioactive;
-        // radioactive = true;
+        radioactive = true;
     }
 
     std::uniform_int_distribution<std::mt19937::result_type> dist4(0, 3);
@@ -94,19 +89,15 @@ bunny::bunny(int colour)
     {
         i_sex = e_sex::female;
     }
-
-    // change to bool
     std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
     randomNumber = dist100(rng);
     if (randomNumber > 1)
     {
-        i_radioactive = e_radioactive::normal;
-        // radioactive = false;
+        radioactive = false;
     }
     else
     {
-        i_radioactive = e_radioactive::radioactive;
-        // radioactive = true;
+        radioactive = true;
     }
 
     std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
@@ -117,26 +108,7 @@ bunny::bunny(int colour)
 
 void bunny::turnRadioactive()
 {
-    i_radioactive = e_radioactive::radioactive;
-}
-
-void bunny::SetColour(int colour)
-{
-    switch (colour)
-    {
-    case 0:
-        i_colour = e_colour::white;
-        break;
-    case 1:
-        i_colour = e_colour::brown;
-        break;
-    case 2:
-        i_colour = e_colour::black;
-        break;
-    case 3:
-        i_colour = e_colour::spotted;
-        break;
-    }
+    radioactive = true;
 }
 
 std::string bunny::getName()
@@ -405,7 +377,7 @@ void bunny::SetAge()
 std::string bunny::getRadioactive()
 {
     std::map<int, std::string> R{{0, "normal"}, {1, "radioactive"}};
-    return R[i_radioactive];
+    return R[radioactive];
 }
 std::string bunny::getColour()
 {

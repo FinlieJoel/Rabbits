@@ -33,7 +33,7 @@ void thePen::turn()
         thePen::display((*f)->age, (*f)->getName(), (*f)->getRadioactive(), (*f)->getColour(), (*f)->getSex());
         if (radioactiveInfection > 0)
         {
-            if ((*f)->i_radioactive == 0)
+            if ((*f)->radioactive == 0)
             {
                 std::cout << "one more radioactive bunny" << std::endl;
                 (*f)->turnRadioactive();
@@ -42,7 +42,7 @@ void thePen::turn()
             }
         }
         // This function adds the bunnys to the breading list
-        if ((*f)->age > 2 && (*f)->i_radioactive == 0)
+        if ((*f)->age > 2 && (*f)->radioactive == 0)
         {
             if ((*f)->i_sex == 1)
             {
@@ -54,7 +54,7 @@ void thePen::turn()
                 breadingMale = true;
             }
         }
-        if (((*f)->age == MaxAge && (*f)->i_radioactive == 0) || ((*f)->age == MaxInfectedAge))
+        if (((*f)->age == MaxAge && (*f)->radioactive == 0) || ((*f)->age == MaxInfectedAge))
         {
             std::cout << "Bunny " << (*f)->getName() << " has died\n";
             MyBunnyList.erase(f--);
@@ -68,10 +68,8 @@ void thePen::turn()
         {
             std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>(furColour.at(i));
             MyBunnyList.push_back(NewBunny);
-            // NewBunny->SetColour(furColour.at(i));
-            std::cout << "Bunny " << NewBunny->getName() << " was born!"
-                      << "FUR COLOUR: " << NewBunny->getColour() << std::endl;
-            if (NewBunny->i_radioactive == 1)
+            std::cout << "Bunny " << NewBunny->getName() << " was born!" << std::endl;
+            if (NewBunny->radioactive == 1)
             {
                 radioactiveInfection++;
             }
