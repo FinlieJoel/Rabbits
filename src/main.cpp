@@ -29,9 +29,3 @@ int main()
 
     return 0;
 }
-
-// To do,
-
-// efficiencies - ie take colours out that become null, also the static etc key words
-// move things to bools that can be moved?
-// make sure things are true random , to do this look at teh pokemon code -- ask about this ..

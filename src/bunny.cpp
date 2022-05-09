@@ -28,11 +28,11 @@ bunny::bunny()
     randomNumber = dist100(rng);
     if (randomNumber > 1)
     {
-        radioactive = false;
+        infected = false;
     }
     else
     {
-        radioactive = true;
+        infected = true;
     }
 
     std::uniform_int_distribution<std::mt19937::result_type> dist4(0, 3);
@@ -61,6 +61,8 @@ bunny::bunny()
 
 bunny::bunny(int colour)
 {
+    age = 0;
+
     switch (colour)
     {
     case 0:
@@ -93,11 +95,11 @@ bunny::bunny(int colour)
     randomNumber = dist100(rng);
     if (randomNumber > 1)
     {
-        radioactive = false;
+        infected = false;
     }
     else
     {
-        radioactive = true;
+        infected = true;
     }
 
     std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
@@ -106,9 +108,9 @@ bunny::bunny(int colour)
     i_lastName = LastDist(rng);
 }
 
-void bunny::turnRadioactive()
+void bunny::turnInfected()
 {
-    radioactive = true;
+    infected = true;
 }
 
 std::string bunny::getName()
@@ -374,10 +376,10 @@ void bunny::SetAge()
 {
     age++;
 }
-std::string bunny::getRadioactive()
+std::string bunny::getInfected()
 {
-    std::map<int, std::string> R{{0, "normal"}, {1, "radioactive"}};
-    return R[radioactive];
+    std::map<int, std::string> R{{0, "normal"}, {1, "infected"}};
+    return R[infected];
 }
 std::string bunny::getColour()
 {

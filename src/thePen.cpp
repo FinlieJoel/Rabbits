@@ -1,10 +1,7 @@
 
 #include <iostream>
 #include <string>
-#include <memory>
 #include "../include/thePen.h"
-#include <vector>
-#include <list>
 
 thePen::thePen()
 {
@@ -17,9 +14,9 @@ thePen::thePen()
     }
 };
 
-void thePen::display(int age, std::string name, std::string radioactive, std::string colour, std::string gender)
+void thePen::display(int age, std::string name, std::string infected, std::string colour, std::string gender)
 {
-    std::cout << "Rabbit " << name << " is " << radioactive << ", " << age << " years old, " << colour << " in colour and " << gender << std::endl;
+    std::cout << "Rabbit " << name << " is " << infected << ", " << age << " years old, " << colour << " in colour and " << gender << std::endl;
 }
 
 void thePen::turn()
@@ -30,19 +27,18 @@ void thePen::turn()
     for (std::list<std::shared_ptr<bunny>>::iterator f = MyBunnyList.begin(); f != MyBunnyList.end(); ++f)
     {
         (*f)->SetAge();
-        thePen::display((*f)->age, (*f)->getName(), (*f)->getRadioactive(), (*f)->getColour(), (*f)->getSex());
+        thePen::display((*f)->age, (*f)->getName(), (*f)->getInfected(), (*f)->getColour(), (*f)->getSex());
         if (radioactiveInfection > 0)
         {
-            if ((*f)->radioactive == 0)
+            if ((*f)->infected == 0)
             {
-                std::cout << "one more radioactive bunny" << std::endl;
-                (*f)->turnRadioactive();
+                (*f)->turnInfected();
                 radioactiveInfection--;
                 true;
             }
         }
         // This function adds the bunnys to the breading list
-        if ((*f)->age > 2 && (*f)->radioactive == 0)
+        if ((*f)->age > 2 && (*f)->infected == 0)
         {
             if ((*f)->i_sex == 1)
             {
@@ -54,7 +50,7 @@ void thePen::turn()
                 breadingMale = true;
             }
         }
-        if (((*f)->age == MaxAge && (*f)->radioactive == 0) || ((*f)->age == MaxInfectedAge))
+        if (((*f)->age == MaxAge && (*f)->infected == 0) || ((*f)->age == MaxInfectedAge))
         {
             std::cout << "Bunny " << (*f)->getName() << " has died\n";
             MyBunnyList.erase(f--);
@@ -69,11 +65,11 @@ void thePen::turn()
             std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>(furColour.at(i));
             MyBunnyList.push_back(NewBunny);
             std::cout << "Bunny " << NewBunny->getName() << " was born!" << std::endl;
-            if (NewBunny->radioactive == 1)
+            if (NewBunny->infected == 1)
             {
                 radioactiveInfection++;
             }
-            thePen::display(NewBunny->age, NewBunny->getName(), NewBunny->getRadioactive(), NewBunny->getColour(), NewBunny->getSex());
+            thePen::display(NewBunny->age, NewBunny->getName(), NewBunny->getInfected(), NewBunny->getColour(), NewBunny->getSex());
         }
     }
 
@@ -93,6 +89,6 @@ void thePen::turn()
             MyBunnyList.erase(k);
         }
 
-        std::cout << "After the bunny cull size :: " << MyBunnyList.size() << std::endl;
+        std::cout << "After the bunny cull, population size is: " << MyBunnyList.size() << std::endl;
     }
 };
