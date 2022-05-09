@@ -29,16 +29,17 @@ public:
         spotted
     };
     enum e_colour i_colour;
-    int age;              // 0-10
-    std::string m_colour; // random selection of names.
-    std::string m_sex, name, m_radioactive;
-    // std::list<int> Rabbit;
+    int age;
+    int i_firstName, i_lastName;
 
     bunny();
-    void SetRadioactive();
-    // void SetColour();
+    // void SetRadioactive();
     void SetColour(int);
     void SetAge();
     void turnRadioactive();
-    void SetName();
+    std::string getRadioactive();
+    std::string getColour();
+    std::string getSex();
+    std::string getName();
+    int V_names();
 };

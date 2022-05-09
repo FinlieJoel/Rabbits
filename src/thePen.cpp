@@ -12,7 +12,7 @@ thePen::thePen()
     for (int i = 0; i < 5; i++)
     {
         std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>();
-        std::cout << "Bunny " << NewBunny->name << " was born!\n";
+        std::cout << "Bunny " << NewBunny->getName() << " was born!\n";
         MyBunnyList.push_back(NewBunny);
     }
 };
@@ -30,7 +30,7 @@ void thePen::turn()
     for (std::list<std::shared_ptr<bunny>>::iterator f = MyBunnyList.begin(); f != MyBunnyList.end(); ++f)
     {
         (*f)->SetAge();
-        thePen::display((*f)->age, (*f)->name, (*f)->m_radioactive, (*f)->m_colour, (*f)->m_sex);
+        thePen::display((*f)->age, (*f)->getName(), (*f)->getRadioactive(), (*f)->getColour(), (*f)->getSex());
         if (radioactiveInfection > 0)
         {
             if ((*f)->i_radioactive == 0)
@@ -56,7 +56,7 @@ void thePen::turn()
         }
         if (((*f)->age == MaxAge && (*f)->i_radioactive == 0) || ((*f)->age == MaxInfectedAge))
         {
-            std::cout << "Bunny " << (*f)->name << " has died\n";
+            std::cout << "Bunny " << (*f)->getName() << " has died\n";
             MyBunnyList.erase(f--);
         }
     }
@@ -69,13 +69,13 @@ void thePen::turn()
             std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>();
             MyBunnyList.push_back(NewBunny);
             NewBunny->SetColour(furColour.at(i));
-            std::cout << "Bunny " << NewBunny->name << " was born!"
-                      << "FUR COLOUR: " << NewBunny->m_colour << std::endl;
+            std::cout << "Bunny " << NewBunny->getName() << " was born!"
+                      << "FUR COLOUR: " << NewBunny->getColour() << std::endl;
             if (NewBunny->i_radioactive == 1)
             {
                 radioactiveInfection++;
             }
-            thePen::display(NewBunny->age, NewBunny->name, NewBunny->m_radioactive, NewBunny->m_colour, NewBunny->m_sex);
+            thePen::display(NewBunny->age, NewBunny->getName(), NewBunny->getRadioactive(), NewBunny->getColour(), NewBunny->getSex());
         }
     }
 
@@ -91,7 +91,7 @@ void thePen::turn()
             std::list<std::shared_ptr<bunny>>::iterator k = MyBunnyList.begin();
             int randomNumber = rand() % MyBunnyList.size();
             std::advance(k, randomNumber);
-            std::cout << "Bunny " << (*k)->name << " has died\n";
+            std::cout << "Bunny " << (*k)->getName() << " has died\n";
             MyBunnyList.erase(k);
         }
 
