@@ -38,7 +38,7 @@ void thePen::turn()
             }
         }
         // This function adds the bunnys to the breading list
-        if ((*f)->age > 2 && (*f)->infected == 0)
+        if ((*f)->age >= breadingAge && (*f)->infected == 0)
         {
             if ((*f)->i_sex == 1)
             {
