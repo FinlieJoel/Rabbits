@@ -13,6 +13,7 @@ class thePen
     bool breadingMale;
     int breadingFemale;
     int radioactiveInfection;
+
     void display(int, std::string, std::string, std::string, std::string);
     std::list<std::shared_ptr<bunny>> MyBunnyList;
     std::vector<int> furColour;
@@ -20,4 +21,5 @@ class thePen
 public:
     thePen();
     void turn();
+    void death();
 };

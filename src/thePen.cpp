@@ -1,7 +1,8 @@
-
 #include <iostream>
 #include <string>
 #include "../include/thePen.h"
+#include <chrono>
+#include <thread>
 
 thePen::thePen()
 {
@@ -74,21 +75,20 @@ void thePen::turn()
     }
 
     std::cout << "AMOUNT OF BUNNIES:  " << MyBunnyList.size() << std::endl;
-
-    if (MyBunnyList.size() > MaxPopulation)
-    {
-
-        std::cout << "before the buuny cull size :: " << MyBunnyList.size() << std::endl;
-        int remove = MyBunnyList.size() / 2;
-        for (int g; g < remove; g++)
-        {
-            std::list<std::shared_ptr<bunny>>::iterator k = MyBunnyList.begin();
-            int randomNumber = rand() % MyBunnyList.size();
-            std::advance(k, randomNumber);
-            std::cout << "Bunny " << (*k)->getName() << " has died\n";
-            MyBunnyList.erase(k);
-        }
-
-        std::cout << "After the bunny cull, population size is: " << MyBunnyList.size() << std::endl;
-    }
 };
+
+void thePen::death()
+{
+    std::cout << "before the buuny cull size :: " << MyBunnyList.size() << std::endl;
+    int remove = MyBunnyList.size() / 2;
+    for (int g; g < remove; g++)
+    {
+        std::list<std::shared_ptr<bunny>>::iterator k = MyBunnyList.begin();
+        int randomNumber = rand() % MyBunnyList.size();
+        std::advance(k, randomNumber);
+        std::cout << "Bunny " << (*k)->getName() << " has died\n";
+        MyBunnyList.erase(k);
+    }
+
+    std::cout << "After the bunny cull, population size is: " << MyBunnyList.size() << std::endl;
+}
