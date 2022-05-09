@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "../include/thePen.h"
+#include <chrono>
+#include <thread>
 
 thePen::thePen()
 {
@@ -11,12 +13,14 @@ thePen::thePen()
         std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>();
         std::cout << "Bunny " << NewBunny->getName() << " was born!\n";
         MyBunnyList.push_back(NewBunny);
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 };
 
 void thePen::display(int age, std::string name, std::string infected, std::string colour, std::string gender)
 {
     std::cout << "Rabbit " << name << " is " << infected << ", " << age << " years old, " << colour << " in colour and " << gender << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void thePen::turn()
@@ -54,6 +58,7 @@ void thePen::turn()
         {
             std::cout << "Bunny " << (*f)->getName() << " has died\n";
             MyBunnyList.erase(f--);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     }
     // This breads the bunnys at the end of the go
@@ -65,6 +70,7 @@ void thePen::turn()
             std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>(furColour.at(i));
             MyBunnyList.push_back(NewBunny);
             std::cout << "Bunny " << NewBunny->getName() << " was born!" << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             if (NewBunny->infected == 1)
             {
                 radioactiveInfection++;
@@ -74,6 +80,7 @@ void thePen::turn()
     }
 
     std::cout << "AMOUNT OF BUNNIES:  " << MyBunnyList.size() << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
     if (MyBunnyList.size() > MaxPopulation)
     {
@@ -87,6 +94,7 @@ void thePen::turn()
             std::advance(k, randomNumber);
             std::cout << "Bunny " << (*k)->getName() << " has died\n";
             MyBunnyList.erase(k);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
 
         std::cout << "After the bunny cull, population size is: " << MyBunnyList.size() << std::endl;
