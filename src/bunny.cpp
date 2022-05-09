@@ -6,22 +6,20 @@
 #include <random>
 #include <stdlib.h>
 //#include <iostream.h>
-
+// passs in initalisation list look at static example
+// can have random before and add in
+// initalisation list
 bunny::bunny()
 {
     age = 0;
+    // change random
+    // change m_ stuff to function and do not store,
+    // change radioactve to true/ false
 
-    // std::mt19937 gen(time(0));
-    // std::uniform_int_distribution<> distrX(0, 1);
-    // int randomNumber = distrX(gen);
-    // srand((unsigned)time(0));
-    // int randomNumber = 1 + (rand() % 2);
-    // std::randomize();
-    // std::default_random_engine generator;
-    // std::uniform_int_distribution<int> distribution(0, 2);
-    // int randomNumber = distribution(generator);
-    // srand;
-    int randomNumber = rand() % 2;
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist2(0, 1);
+    int randomNumber = dist2(rng);
     if (randomNumber == 0)
     {
         i_sex = e_sex::male;
@@ -33,7 +31,9 @@ bunny::bunny()
     std::map<int, std::string> S{{0, "Male"}, {1, "Female"}};
     m_sex = S[i_sex];
 
-    randomNumber = rand() % 100;
+    // change to bool
+    std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99); // distribution in range [1, 6]
+    randomNumber = dist100(rng);
     if (randomNumber > 1)
     {
         i_radioactive = e_radioactive::normal;
@@ -47,7 +47,9 @@ bunny::bunny()
     std::map<int, std::string> R{{0, "normal"}, {1, "radioactive"}};
     m_radioactive = R[i_radioactive];
 
-    randomNumber = rand() % 4;
+    // randomNumber = rand() % 4;
+    std::uniform_int_distribution<std::mt19937::result_type> dist4(0, 3); // distribution in range [1, 6]
+    randomNumber = dist4(rng);
 
     switch (randomNumber)
     {
@@ -64,26 +66,9 @@ bunny::bunny()
         i_colour = e_colour::spotted;
         break;
     }
-    /*if (randomNumber == 0)
-    {
-        int i_colour = e_colour::white;
-    }
-    else if (randomNumber == 1)
-    {
-        int i_colour = e_colour::brown;
-    }
-    else if (randomNumber == 2)
-    {
-        int i_colour = e_colour::black;
-    }
-    else
-    {
-        int i_colour = e_colour::spotted;
-    }*/
-
     std::map<int, std::string> C{{0, "White"}, {1, "Brown"}, {2, "Black"}, {3, "Spotted"}};
     m_colour = C[i_colour];
-    // Rabbit = {age, i_sex, i_colour, radioactive, i_name};
+    // write this at time of need.. can do this to all the M's
     bunny::SetName();
 }
 
@@ -385,9 +370,13 @@ void bunny::SetName()
                                    "Ziggy",
                                    "Zorro"};
 
-    int randomNumber = rand() % names.size();
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, names.size() - 1); // distribution in range [1, 6]
+    int randomNumber = FirstDist(rng);
     std::string firstName = names.at(randomNumber);
-    randomNumber = rand() % names.size();
+    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, names.size() - 1); // distribution in range [1, 6]
+    randomNumber = LastDist(rng);
     std::string secondName = names.at(randomNumber);
     name = firstName + " " + secondName;
 }
