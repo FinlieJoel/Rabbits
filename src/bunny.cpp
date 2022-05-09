@@ -8,7 +8,6 @@
 
 // passs in initalisation list look at static example
 // can have random before and add in
-// initalisation list
 bunny::bunny()
 {
     age = 0;
@@ -59,6 +58,57 @@ bunny::bunny()
         i_colour = e_colour::spotted;
         break;
     }
+    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
+    i_firstName = FirstDist(rng);
+    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::V_names() - 1);
+    i_lastName = LastDist(rng);
+}
+
+bunny::bunny(int colour)
+{
+    switch (colour)
+    {
+    case 0:
+        i_colour = e_colour::white;
+        break;
+    case 1:
+        i_colour = e_colour::brown;
+        break;
+    case 2:
+        i_colour = e_colour::black;
+        break;
+    case 3:
+        i_colour = e_colour::spotted;
+        break;
+    }
+
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist2(0, 1);
+    int randomNumber = dist2(rng);
+    if (randomNumber == 0)
+    {
+        i_sex = e_sex::male;
+    }
+    else
+    {
+        i_sex = e_sex::female;
+    }
+
+    // change to bool
+    std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
+    randomNumber = dist100(rng);
+    if (randomNumber > 1)
+    {
+        i_radioactive = e_radioactive::normal;
+        // radioactive = false;
+    }
+    else
+    {
+        i_radioactive = e_radioactive::radioactive;
+        // radioactive = true;
+    }
+
     std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
     i_firstName = FirstDist(rng);
     std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::V_names() - 1);

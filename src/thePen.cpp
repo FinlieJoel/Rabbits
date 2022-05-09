@@ -66,9 +66,9 @@ void thePen::turn()
         radioactiveInfection = 0;
         for (int i = 0; i < breadingFemale; i++)
         {
-            std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>();
+            std::shared_ptr<bunny> NewBunny = std::make_shared<bunny>(furColour.at(i));
             MyBunnyList.push_back(NewBunny);
-            NewBunny->SetColour(furColour.at(i));
+            // NewBunny->SetColour(furColour.at(i));
             std::cout << "Bunny " << NewBunny->getName() << " was born!"
                       << "FUR COLOUR: " << NewBunny->getColour() << std::endl;
             if (NewBunny->i_radioactive == 1)

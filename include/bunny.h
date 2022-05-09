@@ -33,7 +33,7 @@ public:
     int i_firstName, i_lastName;
 
     bunny();
-    // void SetRadioactive();
+    bunny(int);
     void SetColour(int);
     void SetAge();
     void turnRadioactive();
