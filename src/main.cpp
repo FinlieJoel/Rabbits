@@ -1,10 +1,8 @@
 #include <iostream>
 #include "../include/thePen.h"
 #include <conio.h>
-
 int main()
 {
-
     thePen MyPen;
     bool exit = false;
     char decision;
@@ -20,12 +18,10 @@ int main()
         case 'x':
             exit = true;
             break;
-
         default:
             std::cout << "Go again .. \n";
             break;
         }
     } while (exit == false);
-
     return 0;
 }

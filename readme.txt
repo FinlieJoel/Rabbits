@@ -23,3 +23,5 @@ To cull the bunnies, it was necessary to traverse the list using an iterator cou
 This pointer would then be deleted from the list after the rabbits obituary was printed to the screen. 
 
 There are two branches, (ExtraTask1) and (ExtraTask2) which include the code for the two extra tasks. 
+
+If I had more time, having looked into threading, I would do task 2 slightly differently. 
