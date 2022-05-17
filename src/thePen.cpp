@@ -39,7 +39,7 @@ void thePen::turn()
             {
                 (*f)->turnInfected();
                 noInfectedCopy--;
-                noInfected++;
+                noInfected++; // comment this out to reduce infections and the simulation will last longer.
             }
         }
         if ((*f)->age >= breadingAge && (*f)->infected == 0) // Setting the amount of breeding females and male
