@@ -19,7 +19,7 @@ thePen::thePen()
     }
 };
 
-void thePen::display(int age, std::string name, std::string infected, std::string colour, std::string gender)
+void thePen::display(int &age, std::string name, std::string infected, std::string colour, std::string gender)
 {
     std::cout << "Rabbit " << name << " is " << infected << ", " << age << " years old, " << colour << " in colour and " << gender << std::endl;
 }

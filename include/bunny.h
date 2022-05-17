@@ -25,7 +25,7 @@ public:
     int age;
 
     bunny();
-    bunny(int);
+    bunny(int &);
     void SetAge();
     void turnInfected();
     std::string getInfected();

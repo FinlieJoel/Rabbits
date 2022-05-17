@@ -13,7 +13,7 @@ class thePen
     bool breadingMale;
     int breadingFemale;
     int noInfected;
-    void display(int, std::string, std::string, std::string, std::string);
+    void display(int &, std::string, std::string, std::string, std::string);
     std::list<std::shared_ptr<bunny>> MyBunnyList;
     std::vector<int> furColour;
     void cull();
