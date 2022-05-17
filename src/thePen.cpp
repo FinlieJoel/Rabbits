@@ -124,3 +124,14 @@ void thePen::breed()
         }
     }
 }
+bool thePen::terminate()
+{
+    if (MyBunnyList.size() == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
