@@ -57,7 +57,7 @@ bunny::bunny()
     i_lastName = LastDist(rng);
 }
 
-bunny::bunny(int colour)
+bunny::bunny(int &colour)
 {
     age = 0;
 
