@@ -18,14 +18,15 @@ int main()
         if (kbhit())
         {
             i = getch();
-            if (i == 'k')
+            if (i == 'k' || 'K')
             {
-                MyPen.death();
+                MyPen.cull();
             }
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
         MyPen.turn();
+        exit = MyPen.terminate();
 
     } while (exit == false);
 
