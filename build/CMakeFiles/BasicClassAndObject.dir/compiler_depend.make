@@ -380,21 +380,7 @@ CMakeFiles/BasicClassAndObject.dir/src/main.cpp.obj: ../src/main.cpp \
   C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_memory_defs.h \
   C:/msys64/mingw64/include/c++/11.2.0/pstl/execution_defs.h \
   C:/msys64/mingw64/include/conio.h \
-  C:/msys64/mingw64/include/sec_api/conio_s.h \
-  C:/msys64/mingw64/include/c++/11.2.0/chrono \
-  C:/msys64/mingw64/include/c++/11.2.0/ratio \
-  C:/msys64/mingw64/include/c++/11.2.0/limits \
-  C:/msys64/mingw64/include/c++/11.2.0/ctime \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/parse_numbers.h \
-  C:/msys64/mingw64/include/c++/11.2.0/thread \
-  C:/msys64/mingw64/include/c++/11.2.0/stop_token \
-  C:/msys64/mingw64/include/c++/11.2.0/atomic \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/std_thread.h \
-  C:/msys64/mingw64/include/c++/11.2.0/semaphore \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/semaphore_base.h \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/atomic_timed_wait.h \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/this_thread_sleep.h \
-  C:/msys64/mingw64/include/semaphore.h
+  C:/msys64/mingw64/include/sec_api/conio_s.h
 
 CMakeFiles/BasicClassAndObject.dir/src/thePen.cpp.obj: ../src/thePen.cpp \
   C:/msys64/mingw64/include/c++/11.2.0/iostream \
@@ -581,32 +567,8 @@ CMakeFiles/BasicClassAndObject.dir/src/thePen.cpp.obj: ../src/thePen.cpp \
   C:/msys64/mingw64/include/c++/11.2.0/bits/stream_iterator.h \
   C:/msys64/mingw64/include/c++/11.2.0/bits/uses_allocator_args.h \
   C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_memory_defs.h \
-  C:/msys64/mingw64/include/c++/11.2.0/pstl/execution_defs.h \
-  C:/msys64/mingw64/include/c++/11.2.0/chrono \
-  C:/msys64/mingw64/include/c++/11.2.0/ratio \
-  C:/msys64/mingw64/include/c++/11.2.0/limits \
-  C:/msys64/mingw64/include/c++/11.2.0/ctime \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/parse_numbers.h \
-  C:/msys64/mingw64/include/c++/11.2.0/thread \
-  C:/msys64/mingw64/include/c++/11.2.0/stop_token \
-  C:/msys64/mingw64/include/c++/11.2.0/atomic \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/std_thread.h \
-  C:/msys64/mingw64/include/c++/11.2.0/semaphore \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/semaphore_base.h \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/atomic_timed_wait.h \
-  C:/msys64/mingw64/include/c++/11.2.0/bits/this_thread_sleep.h \
-  C:/msys64/mingw64/include/semaphore.h
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/execution_defs.h
 
-
-C:/msys64/mingw64/include/c++/11.2.0/bits/this_thread_sleep.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/bits/std_thread.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/stop_token:
-
-C:/msys64/mingw64/include/c++/11.2.0/thread:
-
-C:/msys64/mingw64/include/c++/11.2.0/ratio:
 
 C:/msys64/mingw64/include/sec_api/conio_s.h:
 
@@ -661,8 +623,6 @@ C:/msys64/mingw64/include/c++/11.2.0/random:
 C:/msys64/mingw64/include/c++/11.2.0/ctime:
 
 C:/msys64/mingw64/include/c++/11.2.0/bits/stl_vector.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/bits/atomic_timed_wait.h:
 
 C:/msys64/mingw64/include/c++/11.2.0/bits/stl_uninitialized.h:
 
@@ -735,8 +695,6 @@ C:/msys64/mingw64/include/_mingw_mac.h:
 C:/msys64/mingw64/include/c++/11.2.0/bits/stl_iterator.h:
 
 C:/msys64/mingw64/include/c++/11.2.0/bits/stl_heap.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/semaphore:
 
 C:/msys64/mingw64/include/c++/11.2.0/compare:
 
@@ -860,15 +818,11 @@ C:/msys64/mingw64/include/c++/11.2.0/pstl/execution_defs.h:
 
 C:/msys64/mingw64/include/c++/11.2.0/ostream:
 
-C:/msys64/mingw64/include/c++/11.2.0/atomic:
-
 C:/msys64/mingw64/include/corecrt_startup.h:
 
 C:/msys64/mingw64/include/pthread_signal.h:
 
 ../src/bunny.cpp:
-
-C:/msys64/mingw64/include/semaphore.h:
 
 C:/msys64/mingw64/include/c++/11.2.0/cwchar:
 
@@ -927,8 +881,6 @@ C:/msys64/mingw64/include/c++/11.2.0/istream:
 C:/msys64/mingw64/include/c++/11.2.0/debug/assertions.h:
 
 C:/msys64/mingw64/include/process.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/chrono:
 
 C:/msys64/mingw64/include/c++/11.2.0/bits/functional_hash.h:
 
@@ -994,11 +946,7 @@ C:/msys64/mingw64/include/c++/11.2.0/bits/node_handle.h:
 
 C:/msys64/mingw64/include/time.h:
 
-C:/msys64/mingw64/include/c++/11.2.0/bits/parse_numbers.h:
-
 C:/msys64/mingw64/include/_timeval.h:
-
-C:/msys64/mingw64/include/c++/11.2.0/bits/semaphore_base.h:
 
 C:/msys64/mingw64/include/pthread_unistd.h:
 

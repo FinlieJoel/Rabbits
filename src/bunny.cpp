@@ -6,8 +6,6 @@
 #include <random>
 #include <stdlib.h>
 
-// passs in initalisation list look at static example
-// can have random before and add in
 bunny::bunny()
 {
     age = 0;
@@ -53,9 +51,9 @@ bunny::bunny()
         i_colour = e_colour::spotted;
         break;
     }
-    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
+    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::nameSize() - 1);
     i_firstName = FirstDist(rng);
-    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::V_names() - 1);
+    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::nameSize() - 1);
     i_lastName = LastDist(rng);
 }
 
@@ -102,9 +100,9 @@ bunny::bunny(int colour)
         infected = true;
     }
 
-    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::V_names() - 1);
+    std::uniform_int_distribution<std::mt19937::result_type> FirstDist(0, bunny::nameSize() - 1);
     i_firstName = FirstDist(rng);
-    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::V_names() - 1);
+    std::uniform_int_distribution<std::mt19937::result_type> LastDist(0, bunny::nameSize() - 1);
     i_lastName = LastDist(rng);
 }
 
@@ -368,7 +366,6 @@ std::string bunny::getName()
 
     std::string firstName = names.at(i_firstName);
     std::string secondName = names.at(i_lastName);
-    // firstName + " " + secondName;
     return firstName + " " + secondName;
 }
 
@@ -393,7 +390,7 @@ std::string bunny::getSex()
     return S[i_sex];
 }
 
-int bunny::V_names()
+int bunny::nameSize()
 {
     std::vector<std::string> names{"Ace",
                                    "Alaska",

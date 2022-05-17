@@ -4,7 +4,7 @@
 class bunny
 {
     int i_firstName, i_lastName;
-    int V_names();
+    int nameSize();
 
 public:
     enum e_sex

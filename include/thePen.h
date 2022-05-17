@@ -6,18 +6,21 @@
 
 class thePen
 {
-    const int MaxAge = 9;
-    const int MaxInfectedAge = 49;
+    const int MaxAge = 10;
+    const int MaxInfectedAge = 50;
     const int MaxPopulation = 999;
     const int breadingAge = 2;
     bool breadingMale;
     int breadingFemale;
-    int radioactiveInfection;
+    int noInfected;
     void display(int, std::string, std::string, std::string, std::string);
     std::list<std::shared_ptr<bunny>> MyBunnyList;
     std::vector<int> furColour;
+    void cull();
+    void breed();
 
 public:
     thePen();
     void turn();
+    bool terminate();
 };
