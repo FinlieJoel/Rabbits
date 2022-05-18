@@ -1,3 +1,0 @@
-C:/Projects/Bunny/build/CMakeFiles/BasicClassAndObject.dir
-C:/Projects/Bunny/build/CMakeFiles/edit_cache.dir
-C:/Projects/Bunny/build/CMakeFiles/rebuild_cache.dir
